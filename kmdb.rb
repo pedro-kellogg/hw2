@@ -84,7 +84,13 @@ Agent.destroy_all
 Studio.destroy_all
 
 # Generate models and tables, according to the domain model.
-# TODO!
+# Done in the terminal with:
+# rails generate model Studio name:string
+# rails generate model Agent name:string
+# rails generate model Movie title:string year_released:integer rated:string studio:references
+# rails generate model Actor name:string agent_id:integer
+# rails generate model Role character_name:string movie:references actor:references
+# rails db:migrate
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
@@ -266,7 +272,9 @@ puts "======"
 puts ""
 
 # Query the movies data and loop through the results to display the movies output.
-# TODO!
+for movie in Movie.all
+  puts "#{movie.title} #{movie.year_released} #{movie.rated} #{movie.studio.name}"
+end
 
 # Prints a header for the cast output
 puts ""
@@ -275,7 +283,9 @@ puts "========"
 puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
-# TODO!
+for role in Role.all
+  puts "#{role.movie.title} #{role.actor.name} #{role.character_name}"
+end
 
 # Prints a header for the agent's list of represented actors output
 puts ""
@@ -284,4 +294,8 @@ puts "===================="
 puts ""
 
 # Query the actor data and loop through the results to display the agent's list of represented actors output.
-# TODO!
+for actor in Actor.all
+  if actor.agent != nil
+    puts "#{actor.name}"
+  end
+end
