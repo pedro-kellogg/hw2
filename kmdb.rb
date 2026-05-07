@@ -236,14 +236,16 @@ role["character_name"] = "Rachel Dawes"
 role.save
 
 # Inserting roles Dark Knight Rises
+movie = Movie.find_by(title: "Dark Knight Rises") # tip from Nathan during Office hours
+
 role = Role.new
-role["movie_id"] = Movie.find_by({ "title" => "Dark Knight Rises" })["id"]
+role.movie_id = movie.id # Usign variable above
 role["actor_id"] = Actor.find_by({ "name" => "Christian Bale" })["id"]
 role["character_name"] = "Bruce Wayne"
 role.save
 
 role = Role.new
-role["movie_id"] = Movie.find_by({ "title" => "Dark Knight Rises" })["id"]
+role["movie_id"] = movie.id # Usign variable above
 role["actor_id"] = Actor.find_by({ "name" => "Gary Oldman" })["id"]
 role["character_name"] = "Commissioner Gordon"
 role.save
