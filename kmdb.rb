@@ -88,7 +88,177 @@ Studio.destroy_all
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
-# TODO!
+
+# Inserting studios
+warner = Studio.new
+warner.name = "Warner Bros."
+warner.save
+
+# Inserting agents
+ari = Agent.new
+ari.name = "Ari Emanuel"
+ari.save
+
+# Inserting movies
+batman_begins = Movie.new
+batman_begins.title = "Batman Begins"
+batman_begins.year_released = 2005
+batman_begins.rated = "PG-13"
+batman_begins.studio = warner
+batman_begins.save
+
+dark_knight = Movie.new
+dark_knight.title = "The Dark Knight"
+dark_knight.year_released = 2008
+dark_knight.rated = "PG-13"
+dark_knight.studio = warner
+dark_knight.save
+
+dark_knight_rises = Movie.new
+dark_knight_rises.title = "Dark Knight Rises"
+dark_knight_rises.year_released = 2012
+dark_knight_rises.rated = "PG-13"
+dark_knight_rises.studio = warner
+dark_knight_rises.save
+
+# Inserting actors and actresses
+christian_bale = Actor.new
+christian_bale.name = "Christian Bale"
+christian_bale.agent = ari
+christian_bale.save
+
+michael_caine = Actor.new
+michael_caine.name = "Michael Caine"
+michael_caine.save
+
+liam_neeson = Actor.new
+liam_neeson.name = "Liam Neeson"
+liam_neeson.save
+
+katie_holmes = Actor.new
+katie_holmes.name = "Katie Holmes"
+katie_holmes.save
+
+gary_oldman = Actor.new
+gary_oldman.name = "Gary Oldman"
+gary_oldman.save
+
+heath_ledger = Actor.new
+heath_ledger.name = "Heath Ledger"
+heath_ledger.save
+
+aaron_eckhart = Actor.new
+aaron_eckhart.name = "Aaron Eckhart"
+aaron_eckhart.save
+
+maggie_gyllenhaal = Actor.new
+maggie_gyllenhaal.name = "Maggie Gyllenhaal"
+maggie_gyllenhaal.save
+
+tom_hardy = Actor.new
+tom_hardy.name = "Tom Hardy"
+tom_hardy.save
+
+joseph_gl = Actor.new
+joseph_gl.name = "Joseph Gordon-Levitt"
+joseph_gl.save
+
+anne_hathaway = Actor.new
+anne_hathaway.name = "Anne Hathaway"
+anne_hathaway.save
+
+# Inserting roles Batman Begins
+role = Role.new
+role.movie = batman_begins
+role.actor = christian_bale
+role.character_name = "Bruce Wayne"
+role.save
+
+role = Role.new
+role.movie = batman_begins
+role.actor = michael_caine
+role.character_name = "Alfred"
+role.save
+
+role = Role.new
+role.movie = batman_begins
+role.actor = liam_neeson
+role.character_name = "Ra's Al Ghul"
+role.save
+
+role = Role.new
+role.movie = batman_begins
+role.actor = katie_holmes
+role.character_name = "Rachel Dawes"
+role.save
+
+role = Role.new
+role.movie = batman_begins
+role.actor = gary_oldman
+role.character_name = "Commissioner Gordon"
+role.save
+
+# Inserting roles Dark Knight
+role = Role.new
+role.movie = dark_knight
+role.actor = christian_bale
+role.character_name = "Bruce Wayne"
+role.save
+
+role = Role.new
+role.movie = dark_knight
+role.actor = heath_ledger
+role.character_name = "Joker"
+role.save
+
+role = Role.new
+role.movie = dark_knight
+role.actor = aaron_eckhart
+role.character_name = "Harvey Dent"
+role.save
+
+role = Role.new
+role.movie = dark_knight
+role.actor = michael_caine
+role.character_name = "Alfred"
+role.save
+
+role = Role.new
+role.movie = dark_knight
+role.actor = maggie_gyllenhaal
+role.character_name = "Rachel Dawes"
+role.save
+
+# Inserting roles Dark Knight Rises
+role = Role.new
+role.movie = dark_knight_rises
+role.actor = christian_bale
+role.character_name = "Bruce Wayne"
+role.save
+
+role = Role.new
+role.movie = dark_knight_rises
+role.actor = gary_oldman
+role.character_name = "Commissioner Gordon"
+role.save
+
+role = Role.new
+role.movie = dark_knight_rises
+role.actor = tom_hardy
+role.character_name = "Bane"
+role.save
+
+role = Role.new
+role.movie = dark_knight_rises
+role.actor = joseph_gl
+role.character_name = "John Blake"
+role.save
+
+role = Role.new
+role.movie = dark_knight_rises
+role.actor = anne_hathaway
+role.character_name = "Selina Kyle"
+role.save
 
 # Prints a header for the movies output
 puts "Movies"
